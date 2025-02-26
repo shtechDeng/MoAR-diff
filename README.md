@@ -8,3 +8,5 @@ Brain Magnetic Resonance Imaging (MRI) provides high-resolution structural detai
 Fig 1. (a) In the training phase, A U-Net is trained on images without artifacts to predict the Gaussian noise epsilon added at each forward stage, based on different time steps N. To enable supervised fine-tuning, we lock the original U-Net block and create a trainable copy of the encoder, connecting it to zero-convolution layers. (b) In the inference phase, We apply forward diffusion to the image x_wA, adding Gaussian noise to obscure the motion artifacts. We predict the corresponding noise epsilon for each time step to obtain the denoised result x_0|N at the current time step. We then perform a data consistency step in the frequency domain using the fourier transform (fft) of the image x_0|N and the original image x_wA, followed by adding the Gaussian noise for the next time step.
 
 
+![Fig .2. The results of different methods under real motion artifacts on the BCP dataset.](https://github.com/shtechDeng/MoAR-diff/blob/main/UnDPM_finetune/result/BCP_ALL.png?raw=true)
+
